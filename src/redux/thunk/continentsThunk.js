@@ -1,7 +1,7 @@
-import getContinentsAPI from '../../api/continentsAPI';
-import getContinentsAction from '../actions/continentsAction';
+import { getContinentByNameAPI, getContinentsAPI } from '../../api/continentsAPI';
+import { getContinentAction, getContinentsAction } from '../actions/continentsAction';
 
-const continentsThunk = () => async (dispatch) => {
+export const continentsThunk = () => async (dispatch) => {
   const continents = await getContinentsAPI();
   const validContinents = [];
   continents.forEach((continent) => {
@@ -14,4 +14,12 @@ const continentsThunk = () => async (dispatch) => {
   dispatch(getContinentsAction(validContinents));
 };
 
-export default continentsThunk;
+export const continentThunk = (continentName) => async (dispatch) => {
+  const continent = await getContinentByNameAPI(continentName);
+  const validContinent = {
+    cases: continent.cases,
+    continent: continent.continent,
+    countries: continent.countries,
+  };
+  dispatch(getContinentAction(validContinent));
+};

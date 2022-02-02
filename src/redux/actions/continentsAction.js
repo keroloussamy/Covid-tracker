@@ -1,5 +1,5 @@
 export const GET_CONTINENTS = 'GET_CONTINENTS';
+export const GET_CONTINENT = 'GET_CONTINENT';
 
-const getContinentsAction = (payload) => ({ type: GET_CONTINENTS, payload });
-
-export default getContinentsAction;
+export const getContinentsAction = (payload) => ({ type: GET_CONTINENTS, payload });
+export const getContinentAction = (payload) => ({ type: GET_CONTINENT, payload });

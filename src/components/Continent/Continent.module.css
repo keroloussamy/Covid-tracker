@@ -2,8 +2,9 @@
   width: 50%;
   height: 200px;
   padding: 5px 0 20px 0;
-  background-color: #32558c;
   cursor: pointer;
+  border: 0;
+  background-color: #4169AF
 }
 
 .continent:hover {
@@ -21,7 +22,8 @@
 .img {
   width: 50%;
   height: 100%;
-  color: black;
+
+  /* filter: sepia(100%) hue-rotate(190deg) saturate(500%); */
 }
 
 .icon {

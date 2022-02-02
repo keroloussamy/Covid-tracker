@@ -1,6 +1,6 @@
-import { GET_CONTINENTS } from '../actions/continentsAction';
+import { GET_CONTINENT, GET_CONTINENTS } from '../actions/continentsAction';
 
-const continentsReducer = (state = [], action) => {
+export const continentsReducer = (state = [], action) => {
   switch (action.type) {
     case GET_CONTINENTS:
       return action.payload;
@@ -9,4 +9,11 @@ const continentsReducer = (state = [], action) => {
   }
 };
 
-export default continentsReducer;
+export const continentReducer = (state = {}, action) => {
+  switch (action.type) {
+    case GET_CONTINENT:
+      return action.payload;
+    default:
+      return state;
+  }
+};

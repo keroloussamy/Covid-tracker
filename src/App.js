@@ -1,23 +1,37 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import ContinentHeader from './components/ContinentHeader/ContinentHeader';
 import Continents from './components/Continents/Continents';
+import Countries from './components/Countries/Countries';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
-import continentsThunk from './redux/thunk/continentsThunk';
 
 function App() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(continentsThunk());
-  }, []);
-
   return (
-    <div>
+    <BrowserRouter>
       <Navbar />
-      <Header />
-      <Continents />
-    </div>
+
+      <Routes>
+        <Route
+          path="/"
+          element={(
+            <>
+              <Header />
+              <Continents />
+            </>
+          )}
+        />
+        <Route
+          path="/:continentName"
+          element={(
+            <>
+              <ContinentHeader />
+              <Countries />
+            </>
+          )}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

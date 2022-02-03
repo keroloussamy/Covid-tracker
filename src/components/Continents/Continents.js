@@ -13,7 +13,7 @@ const Continents = () => {
 
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-      {continents.map((continent) => (
+      {continents?.map((continent) => (
         <Continent key={continent.continent} continentData={continent} />
       ))}
     </div>

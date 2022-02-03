@@ -8,7 +8,7 @@ const Header = () => {
   const continents = useSelector((state) => state.continentsReducer);
   const [totalCases, setTotalCases] = useState(0);
   useEffect(() => {
-    const totalNumber = continents.reduce((prev, curr) => prev + curr.cases, 0);
+    const totalNumber = continents?.reduce((prev, curr) => prev + curr.cases, 0);
     setTotalCases(totalNumber);
   }, [continents]);
 

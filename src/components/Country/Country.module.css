@@ -6,8 +6,8 @@
   padding: 0 10px;
 }
 
-.countryContainer:nth-child(odd){background-color: #5582E1}
-.countryContainer:nth-child(even){background-color: #4169AF}
+.countryContainer:nth-child(odd) { background-color: #5582e1; }
+.countryContainer:nth-child(even) { background-color: #4169af; }
 
 .img {
   width: 40px;

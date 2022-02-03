@@ -1,33 +1,30 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import '@testing-library/jest-dom'
-import store from '../../redux/configureStore';
+import '@testing-library/jest-dom';
 import { BrowserRouter } from 'react-router-dom';
-import Continents from '../../components/Continents/Continents';
-import configureStore from 'redux-mock-store'
+import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import Continents from '../../components/Continents/Continents';
 
-const middlewares = [thunk]
-const mockStore = configureStore(middlewares)
-const continentsAction = () => ({ type: 'GET_CONTINENTS' })
+const middlewares = [thunk];
+const mockStore = configureStore(middlewares);
+const continentsAction = () => ({ type: 'GET_CONTINENTS' });
 
-function continentsThunk () {
-  return dispatch => {
-    return Promise.resolve(dispatch(continentsAction()))
-  };
+function continentsThunk() {
+  return (dispatch) => Promise.resolve(dispatch(continentsAction()));
 }
 
 test('Continents Tree', () => {
   const store = mockStore();
   store.dispatch(continentsThunk())
-  .then(() => {
-    const actions = store.getActions()
-    expect(actions[0]).toEqual(continentsAction())
-  })
+    .then(() => {
+      const actions = store.getActions();
+      expect(actions[0]).toEqual(continentsAction());
+    });
 });
 
 test('Continents Tree', () => {
-  const initialState = [{ cases:12, continent:'Asia', countries: ['China', 'Jaban'] }];
+  const initialState = [{ cases: 12, continent: 'Asia', countries: ['China', 'Jaban'] }];
   const store = mockStore(initialState);
 
   const tree = render(
@@ -35,8 +32,7 @@ test('Continents Tree', () => {
       <BrowserRouter>
         <Continents />
       </BrowserRouter>
-    </Provider>
+    </Provider>,
   );
   expect(tree).toMatchSnapshot();
 });
-

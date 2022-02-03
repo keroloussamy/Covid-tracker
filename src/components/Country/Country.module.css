@@ -1,0 +1,24 @@
+.countryContainer {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.countryContainer:nth-child(odd) { background-color: #5582e1; }
+.countryContainer:nth-child(even) { background-color: #4169af; }
+
+.img {
+  width: 40px;
+  height: 50%;
+  border: 1px solid white;
+}
+
+.cases {
+  margin-left: auto;
+}
+
+.icon {
+  color: white;
+}

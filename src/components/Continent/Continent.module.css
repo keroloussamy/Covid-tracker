@@ -1,0 +1,34 @@
+.continent {
+  width: 50%;
+  cursor: pointer;
+  padding-top: 5px;
+  border: 0;
+  background-color: #4169af;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.continent:hover {
+  background-color: #5582e1;
+}
+
+.container {
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.img {
+  width: 50%;
+  height: 100%;
+
+  /* filter: sepia(100%) hue-rotate(190deg) saturate(500%); */
+}
+
+.icon {
+  color: white;
+  display: block;
+  margin-left: auto;
+}

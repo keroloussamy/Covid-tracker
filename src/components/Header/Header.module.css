@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  background-color: #5582e1;
+  justify-content: space-around;
+  color: white;
+  align-items: center;
+}
+
+.image {
+  width: 50%;
+}

@@ -1,10 +1,12 @@
 .continent {
   width: 50%;
-  height: 200px;
-  padding: 5px 0 20px 0;
   cursor: pointer;
+  padding-top: 5px;
   border: 0;
   background-color: #4169af;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .continent:hover {
@@ -12,11 +14,10 @@
 }
 
 .container {
-  width: 100%;
-  height: 95%;
-  margin-left: 5px;
+  padding: 5px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .img {

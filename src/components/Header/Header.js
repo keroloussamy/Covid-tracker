@@ -7,6 +7,7 @@ import classes from './Header.module.css';
 const Header = () => {
   const continents = useSelector((state) => state.continentsReducer);
   const [totalCases, setTotalCases] = useState(0);
+
   useEffect(() => {
     const totalNumber = continents?.reduce((prev, curr) => prev + curr.cases, 0);
     setTotalCases(totalNumber);
@@ -20,9 +21,6 @@ const Header = () => {
           <h2>World Cases</h2>
           <p>{totalCases}</p>
         </div>
-      </div>
-      <div className={classes.breaker}>
-        CASES BY CONTINENTS
       </div>
     </header>
   );

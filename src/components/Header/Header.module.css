@@ -1,19 +1,11 @@
 .header {
-  height: 200px;
   display: flex;
   background-color: #5582e1;
   justify-content: space-around;
   color: white;
+  align-items: center;
 }
 
 .image {
   width: 50%;
-  max-width: 400px;
-}
-
-.breaker {
-  background-color: #4169af;
-  color: white;
-  font-size: large;
-  padding-left: 10px;
 }
